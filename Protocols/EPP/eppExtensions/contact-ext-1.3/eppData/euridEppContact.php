@@ -34,6 +34,7 @@ class euridEppContact extends eppContact {
     private $contactExtType;
     private $contactExtLang = 'en';
     private $contactExtVat  = null;
+    private $contactExtNaturalPerson = false;
     private $countryOfCitizenship = null;
 
     public function __construct($postalInfo = null, $email = null, $voice = null, $fax = null, $password = null, $status = null) {
@@ -49,6 +50,10 @@ class euridEppContact extends eppContact {
         }
     }
 
+    public function setContactExtNaturalPerson(bool $naturalPerson = false) {
+      $this->contactExtNaturalPerson = (bool) $naturalPerson;
+    }
+
     public function setContactExtLang($lang)
     {
         if (in_array($lang, $this->acceptedLangCodes)) {
@@ -61,6 +66,10 @@ class euridEppContact extends eppContact {
     public function setContactExtVat($vat)
     {
         $this->contactExtVat =  $vat;
+    }
+
+    public function getContactExtNaturalPerson() {
+      return $this->contactExtNaturalPerson ? 'true' : 'false';
     }
 
     public function getContactExtType()

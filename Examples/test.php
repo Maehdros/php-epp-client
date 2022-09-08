@@ -8,6 +8,7 @@ use Metaregistrar\EPP\euridEppContact;
 use Metaregistrar\EPP\euridEppCreateContactRequest;
 use Metaregistrar\EPP\euridEppCreateDomainRequest;
 use Metaregistrar\EPP\euridEppInfoDomainRequest;
+use Metaregistrar\EPP\euridEppUpdateContactRequest;
 use Metaregistrar\EPP\euridEppUpdateDomainRequest;
 
 $conn = new euridEppConnection(true);
@@ -20,6 +21,18 @@ $conn->setVerifyPeer(true);
 $conn->setVerifyPeerName(true);
 $conn->setLogFile('/www/maehdros/be/maehdros/api/managerv4/logs/epp.log-' . time());
 $conn->login();
+
+
+$postalInfo = new eppContactPostalInfo('Serge Bayet', 'Liège', 'BE', '', 'Rue Charles Horion 20', 'Marseille', '4000', eppContact::TYPE_LOC);
+$contactInfo = new eppContact($postalInfo, 'serge.bayet1975@gmail.com', '+32.494580617');
+$language = 'EN';
+$tva = 'BE0402206045';
+$req = new euridEppUpdateContactRequest('c1186625', null, null, $contactInfo, $language, $tva);
+$reponse = $conn->request($req);
+//var_dump($req->saveXML());
+
+die();
+
 $addObj = new eppDomain('monbeaudomaine.eu');
 $remObj = new eppDomain('monbeaudomaine.eu');
 $updateObj = new eppDomain('monbeaudomaine.eu');

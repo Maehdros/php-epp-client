@@ -13,4 +13,8 @@ $this->addCommandResponse('Metaregistrar\EPP\euridEppDeleteDomainRequest', 'Meta
 include_once(dirname(__FILE__) . '/eppResponses/euridEppInfoDomainResponse.php');
 $this->addCommandResponse('Metaregistrar\EPP\euridEppInfoDomainRequest', 'Metaregistrar\EPP\euridEppInfoDomainResponse');
 
+include_once dirname(__FILE__) . '/eppRequests/euridEppUpdateDomainRequest.php';
 $this->addCommandResponse('Metaregistrar\EPP\euridEppUpdateDomainRequest', 'Metaregistrar\EPP\eppUpdateDomainResponse');
+
+include_once dirname(__FILE__) . '/eppRequests/euridEppUpdateContactRequest.php';
+$this->addCommandResponse('Metaregistrar\EPP\euridEppUpdateContactRequest', 'Metaregistrar\EPP\eppUpdateContactResponse');

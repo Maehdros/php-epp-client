@@ -12,3 +12,5 @@ $this->addCommandResponse('Metaregistrar\EPP\euridEppDeleteDomainRequest', 'Meta
 
 include_once(dirname(__FILE__) . '/eppResponses/euridEppInfoDomainResponse.php');
 $this->addCommandResponse('Metaregistrar\EPP\euridEppInfoDomainRequest', 'Metaregistrar\EPP\euridEppInfoDomainResponse');
+
+$this->addCommandResponse('Metaregistrar\EPP\euridEppUpdateDomainRequest', 'Metaregistrar\EPP\eppUpdateDomainResponse');

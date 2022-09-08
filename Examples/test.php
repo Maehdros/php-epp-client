@@ -8,6 +8,7 @@ use Metaregistrar\EPP\euridEppContact;
 use Metaregistrar\EPP\euridEppCreateContactRequest;
 use Metaregistrar\EPP\euridEppCreateDomainRequest;
 use Metaregistrar\EPP\euridEppInfoDomainRequest;
+use Metaregistrar\EPP\euridEppUpdateDomainRequest;
 
 $conn = new euridEppConnection(true);
 $conn->setHostname('tls://epp.tryout.registry.eu');
@@ -19,12 +20,17 @@ $conn->setVerifyPeer(true);
 $conn->setVerifyPeerName(true);
 $conn->setLogFile('/www/maehdros/be/maehdros/api/managerv4/logs/epp.log-' . time());
 $conn->login();
-
+$addObj = new eppDomain('monbeaudomaine.eu');
+$remObj = new eppDomain('monbeaudomaine.eu');
+$updateObj = new eppDomain('monbeaudomaine.eu');
 $domain = new eppDomain('monbeaudomaine.eu');
-$infodomain = new euridEppInfoDomainRequest($domain);
+$req = new euridEppUpdateDomainRequest($domain, $addObj, $remObj, $updateObj);
+$req->updatensgroup( 'maehdros', 'nsgroup-1629');
+var_dump($req->saveXML());
+$reponse = $conn->request($req);
 
+die();
 
-$reponse = $conn->request($infodomain);
 // @var $reponse \Metaregistrar\EPP\euridEppInfoDomainResponse
 var_dump($reponse->getNsgroup());
 

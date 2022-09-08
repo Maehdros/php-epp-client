@@ -154,7 +154,7 @@ class euridEppInfoDomainResponse extends eppInfoDomainResponse {
 	 * @return string|null
 	 */
 	public function getDeletionDate() {
-		$result = $this->getElementsByTagNameNS('urn:ietf:params:xml:ns:domain-1.0', 'exDate');
+		$result = $this->getElementsByTagNameNS('http://www.eurid.eu/xml/epp/domain-ext-2.3', 'deletionDate');
 		if ($result->length > 0) {
 			return (date("Y-m-d", strtotime($result->item(0)->nodeValue)));
 		} else {

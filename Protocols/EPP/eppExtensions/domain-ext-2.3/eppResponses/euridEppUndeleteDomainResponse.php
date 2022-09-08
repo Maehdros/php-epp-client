@@ -1,6 +1,6 @@
 <?php
 namespace Metaregistrar\EPP;
-class dnsbeEppUndeleteDomainResponse extends eppResponse {
+class euridEppUndeleteDomainResponse extends eppResponse {
 	function __construct() {
 		parent::__construct();
 	}

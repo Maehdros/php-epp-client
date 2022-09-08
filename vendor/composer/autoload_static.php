@@ -241,6 +241,8 @@ class ComposerStaticInit58cecd456791a5a459da5985ba810fc5
         'Metaregistrar\\EPP\\euridEppRegistrarInfoRequest' => __DIR__ . '/../..' . '/Protocols/EPP/eppExtensions/registrarFinance-1.0/eppRequests/euridEppRegistrarInfoRequest.php',
         'Metaregistrar\\EPP\\euridEppRegistrarInfoResponse' => __DIR__ . '/../..' . '/Protocols/EPP/eppExtensions/registrarFinance-1.0/eppResponses/euridEppRegistrarInfoResponse.php',
         'Metaregistrar\\EPP\\euridEppTransferDomainRequest' => __DIR__ . '/../..' . '/Protocols/EPP/eppExtensions/domain-ext-2.3/eppRequests/euridEppTransferDomainRequest.php',
+        'Metaregistrar\\EPP\\euridEppUndeleteDomainRequest' => __DIR__ . '/../..' . '/Protocols/EPP/eppExtensions/domain-ext-2.3/eppRequests/euridEppUndeleteDomainRequest.php',
+        'Metaregistrar\\EPP\\euridEppUpdateContactRequest' => __DIR__ . '/../..' . '/Protocols/EPP/eppExtensions/domain-ext-2.3/eppRequests/euridEppUpdateContactRequest.php',
         'Metaregistrar\\EPP\\euridEppUpdateDomainRequest' => __DIR__ . '/../..' . '/Protocols/EPP/eppExtensions/domain-ext-2.3/eppRequests/euridEppUpdateDomainRequest.php',
         'Metaregistrar\\EPP\\euridEppUpdateNsgroupRequest' => __DIR__ . '/../..' . '/Protocols/EPP/eppExtensions/nsgroup-1.1/eppRequests/euridEppUpdateNsgroupRequest.php',
         'Metaregistrar\\EPP\\euridEppUpdateNsgroupResponse' => __DIR__ . '/../..' . '/Protocols/EPP/eppExtensions/nsgroup-1.1/eppResponses/euridEppUpdateNsgroupResponse.php',

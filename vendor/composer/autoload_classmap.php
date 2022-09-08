@@ -217,6 +217,8 @@ return array(
     'Metaregistrar\\EPP\\euridEppRegistrarInfoRequest' => $baseDir . '/Protocols/EPP/eppExtensions/registrarFinance-1.0/eppRequests/euridEppRegistrarInfoRequest.php',
     'Metaregistrar\\EPP\\euridEppRegistrarInfoResponse' => $baseDir . '/Protocols/EPP/eppExtensions/registrarFinance-1.0/eppResponses/euridEppRegistrarInfoResponse.php',
     'Metaregistrar\\EPP\\euridEppTransferDomainRequest' => $baseDir . '/Protocols/EPP/eppExtensions/domain-ext-2.3/eppRequests/euridEppTransferDomainRequest.php',
+    'Metaregistrar\\EPP\\euridEppUndeleteDomainRequest' => $baseDir . '/Protocols/EPP/eppExtensions/domain-ext-2.3/eppRequests/euridEppUndeleteDomainRequest.php',
+    'Metaregistrar\\EPP\\euridEppUpdateContactRequest' => $baseDir . '/Protocols/EPP/eppExtensions/domain-ext-2.3/eppRequests/euridEppUpdateContactRequest.php',
     'Metaregistrar\\EPP\\euridEppUpdateDomainRequest' => $baseDir . '/Protocols/EPP/eppExtensions/domain-ext-2.3/eppRequests/euridEppUpdateDomainRequest.php',
     'Metaregistrar\\EPP\\euridEppUpdateNsgroupRequest' => $baseDir . '/Protocols/EPP/eppExtensions/nsgroup-1.1/eppRequests/euridEppUpdateNsgroupRequest.php',
     'Metaregistrar\\EPP\\euridEppUpdateNsgroupResponse' => $baseDir . '/Protocols/EPP/eppExtensions/nsgroup-1.1/eppResponses/euridEppUpdateNsgroupResponse.php',

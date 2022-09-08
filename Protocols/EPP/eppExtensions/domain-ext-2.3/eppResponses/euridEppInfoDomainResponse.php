@@ -112,10 +112,9 @@ class euridEppInfoDomainResponse extends eppInfoDomainResponse {
      * @return string|null
      */
     public function getDeletionDate() {
-        $xpath = $this->xPath();
-        $result = $xpath->query('/epp:epp/epp:response/epp:extension/eurid:ext/eurid:infData/eurid:domain/eurid:deletionDate');
+        $result = $this->getElementsByTagNameNS('urn:ietf:params:xml:ns:domain-1.0', 'exDate');
         if ($result->length > 0) {
-            return (Date("Y-m-d",strtotime($result->item(0)->nodeValue)));
+            return (date("Y-m-d",strtotime($result->item(0)->nodeValue)));
         } else {
             return null;
         }

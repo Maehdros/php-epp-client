@@ -26,7 +26,7 @@ $infodomain = new euridEppInfoDomainRequest($domain);
 
 $reponse = $conn->request($infodomain);
 // @var $reponse \Metaregistrar\EPP\euridEppInfoDomainResponse
-var_dump($reponse->getDeletionDate());
+var_dump($reponse->getNsgroup());
 
 die();
 

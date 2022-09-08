@@ -10,6 +10,8 @@ $this->addCommandResponse('Metaregistrar\EPP\euridEppCreateDomainRequest', 'Meta
 include_once(dirname(__FILE__) . '/eppRequests/euridEppDeleteDomainRequest.php');
 $this->addCommandResponse('Metaregistrar\EPP\euridEppDeleteDomainRequest', 'Metaregistrar\EPP\eppDeleteResponse');
 
+include_once dirname(__FILE__) . '/eppRequests/euridEppUndeleteDomainRequest.php';
+$this->addCommandResponse('Metaregistrar\EPP\euridEppDeleteDomainRequest', 'Metaregistrar\EPP\eppUndeleteResponse');
 include_once(dirname(__FILE__) . '/eppResponses/euridEppInfoDomainResponse.php');
 $this->addCommandResponse('Metaregistrar\EPP\euridEppInfoDomainRequest', 'Metaregistrar\EPP\euridEppInfoDomainResponse');
 

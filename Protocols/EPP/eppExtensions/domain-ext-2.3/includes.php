@@ -1,6 +1,6 @@
 <?php
 $this->addExtension('domain-ext', 'http://www.eurid.eu/xml/epp/domain-ext-2.3');
-
+$this->addExtension('eurid', 'http://www.eurid.eu/xml/epp/eurid-1.0');
 include_once(dirname(__FILE__) . '/eppRequests/euridEppTransferDomainRequest.php');
 $this->addCommandResponse('Metaregistrar\EPP\euridEppTransferDomainRequest', 'Metaregistrar\EPP\eppTransferResponse');
 

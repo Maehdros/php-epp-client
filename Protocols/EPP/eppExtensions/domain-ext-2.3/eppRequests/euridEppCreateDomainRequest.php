@@ -75,8 +75,7 @@ class euridEppCreateDomainRequest extends eppCreateDomainRequest {
 		} else {
 			$ext->appendChild($this->createElement('domain-ext:nsgroup', $nsgroup));
 		}
-		$this->getCommand()->appendChild($ext);
-		$this->addSessionId();
+		$this->getExtension()->appendChild($ext);
 	}
 
 }

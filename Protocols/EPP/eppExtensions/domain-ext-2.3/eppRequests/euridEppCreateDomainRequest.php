@@ -64,7 +64,8 @@ class euridEppCreateDomainRequest extends eppCreateDomainRequest {
 	}
 
 	public function addnsgroup($nsgroup) {
-		$ext = $this->createElement('domain-ext:create');
+		$this->setNamespace('xmlns:domain', 'urn:ietf:params:xml:ns:domain-1.0');
+    $ext = $this->createElement('domain-ext:create');
     $ext->setAttribute('xmlns:domain-ext', 'http://www.eurid.eu/xml/epp/domain-ext-2.3');
 		if (is_array($nsgroup)) {
 			foreach ($nsgroup as $nsgroupname) {

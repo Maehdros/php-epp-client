@@ -78,7 +78,7 @@ class euridEppUpdateDomainRequest extends eppUpdateDomainRequest {
 		}
 		if ($removensgroup !== null) {
 			if (is_array($removensgroup) && !empty($removensgroup)) {
-				$rem = $this->createElement('domaine-ext:rem');
+				$rem = $this->createElement('domain-ext:rem');
 				foreach ($removensgroup as $nsgroupname) {
 					$rem->appendChild($this->createElement('domain-ext:nsgroup', $nsgroupname));
 				}

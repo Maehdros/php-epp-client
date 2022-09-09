@@ -19,36 +19,40 @@ class euridEppInfoDomainResponse extends eppInfoDomainResponse {
 	function __construct() {
 		parent::__construct();
 	}
-  /**
+	/**
 	 *
 	 * @return boolean|null
 	 */
 	public function getNameserverGroup() {
-    $result = $this->getElementsByTagNameNS('http://www.eurid.eu/xml/epp/domain-ext-2.3', 'nsgroup');
+		$result = $this->getElementsByTagNameNS('http://www.eurid.eu/xml/epp/domain-ext-2.3', 'nsgroup');
 		if ($result->length > 0) {
-			return $result->item(0)->nodeValue;
+			$arr = [];
+			foreach ($result as $item) {
+				$arr[] = $item->nodeValue;
+			}
+			return $arr;
 		} else {
 			return null;
 		}
 	}
 /**
-	 *
-	 * @return boolean|null
-	 */
+ *
+ * @return boolean|null
+ */
 	public function getMaxExtensionPeriod() {
-    $result = $this->getElementsByTagNameNS('http://www.eurid.eu/xml/epp/domain-ext-2.3', 'maxExtensionPeriod');
+		$result = $this->getElementsByTagNameNS('http://www.eurid.eu/xml/epp/domain-ext-2.3', 'maxExtensionPeriod');
 		if ($result->length > 0) {
 			return (int) $result->item(0)->nodeValue;
 		} else {
 			return null;
 		}
 	}
-  /**
+	/**
 	 *
 	 * @return boolean|null
 	 */
 	public function getRegistrantCountry() {
-    $result = $this->getElementsByTagNameNS('http://www.eurid.eu/xml/epp/domain-ext-2.3', 'registrantCountry');
+		$result = $this->getElementsByTagNameNS('http://www.eurid.eu/xml/epp/domain-ext-2.3', 'registrantCountry');
 		if ($result->length > 0) {
 			return $result->item(0)->nodeValue;
 		} else {
@@ -56,12 +60,12 @@ class euridEppInfoDomainResponse extends eppInfoDomainResponse {
 		}
 	}
 
-  /**
+	/**
 	 *
 	 * @return boolean|null
 	 */
 	public function getDelayed() {
-    $result = $this->getElementsByTagNameNS('http://www.eurid.eu/xml/epp/domain-ext-2.3', 'delayed');
+		$result = $this->getElementsByTagNameNS('http://www.eurid.eu/xml/epp/domain-ext-2.3', 'delayed');
 		if ($result->length > 0) {
 			if ($result->item(0)->nodeValue == 'true') {
 				return true;
@@ -78,7 +82,7 @@ class euridEppInfoDomainResponse extends eppInfoDomainResponse {
 	 * @return boolean|null
 	 */
 	public function getQuarantined() {
-    $result = $this->getElementsByTagNameNS('http://www.eurid.eu/xml/epp/domain-ext-2.3', 'quarantined');
+		$result = $this->getElementsByTagNameNS('http://www.eurid.eu/xml/epp/domain-ext-2.3', 'quarantined');
 		if ($result->length > 0) {
 			if ($result->item(0)->nodeValue == 'true') {
 				return true;
@@ -112,7 +116,7 @@ class euridEppInfoDomainResponse extends eppInfoDomainResponse {
 	 * @return boolean|null
 	 */
 	public function getSuspended() {
-    $result = $this->getElementsByTagNameNS('http://www.eurid.eu/xml/epp/domain-ext-2.3', 'suspended');
+		$result = $this->getElementsByTagNameNS('http://www.eurid.eu/xml/epp/domain-ext-2.3', 'suspended');
 		if ($result->length > 0) {
 			if ($result->item(0)->nodeValue == 'true') {
 				return true;
@@ -129,7 +133,7 @@ class euridEppInfoDomainResponse extends eppInfoDomainResponse {
 	 * @return boolean|null
 	 */
 	public function getSeized() {
-    $result = $this->getElementsByTagNameNS('http://www.eurid.eu/xml/epp/domain-ext-2.3', 'seized');
+		$result = $this->getElementsByTagNameNS('http://www.eurid.eu/xml/epp/domain-ext-2.3', 'seized');
 		if ($result->length > 0) {
 			if ($result->item(0)->nodeValue == 'true') {
 				return true;

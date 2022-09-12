@@ -150,7 +150,12 @@ class euridEppInfoDomainResponse extends eppInfoDomainResponse {
 	 * @return string|null
 	 */
 	public function getAvailableDate() {
-		return $this->getDeletionDate();
+		$result = $this->getElementsByTagNameNS('http://www.eurid.eu/xml/epp/domain-ext-2.3', 'availableDate');
+		if ($result->length > 0) {
+			return (date("Y-m-d", strtotime($result->item(0)->nodeValue)));
+		} else {
+			return null;
+		}
 	}
 
 	/**

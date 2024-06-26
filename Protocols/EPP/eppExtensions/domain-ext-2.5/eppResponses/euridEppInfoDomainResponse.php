@@ -39,18 +39,6 @@ class euridEppInfoDomainResponse extends eppInfoDomainResponse {
      *
      * @return boolean|null
      */
-    public function getMaxExtensionPeriod() {
-        $result = @$xpath->query('/epp:epp/epp:response/epp:extension/domain-ext:infData/domain-ext:maxExtensionPeriod');
-    	if ($result->length > 0) {
-    		return (int) $result->item(0)->nodeValue;
-    	} else {
-    		return null;
-    	}
-    }
-    /**
-     *
-     * @return boolean|null
-     */
     public function getRegistrantCountry() {
         $result = @$xpath->query('/epp:epp/epp:response/epp:extension/domain-ext:infData/domain-ext:registrantCountry');
     	if ($result->length > 0) {

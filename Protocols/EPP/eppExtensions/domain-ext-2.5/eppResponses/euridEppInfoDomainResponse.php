@@ -24,6 +24,7 @@ class euridEppInfoDomainResponse extends eppInfoDomainResponse {
      * @return boolean|null
      */
     public function getNameserverGroup() {
+        $xpath = $this->xPath();
         $result = @$xpath->query('/epp:epp/epp:response/epp:extension/domain-ext:infData/domain-ext:nsgroup');
     	if ($result->length > 0) {
     		$arr = [];
@@ -40,6 +41,7 @@ class euridEppInfoDomainResponse extends eppInfoDomainResponse {
      * @return boolean|null
      */
     public function getRegistrantCountry() {
+        $xpath = $this->xPath();
         $result = @$xpath->query('/epp:epp/epp:response/epp:extension/domain-ext:infData/domain-ext:registrantCountry');
     	if ($result->length > 0) {
     		return $result->item(0)->nodeValue;
@@ -53,6 +55,7 @@ class euridEppInfoDomainResponse extends eppInfoDomainResponse {
      * @return boolean|null
      */
     public function getDelayed() {
+        $xpath = $this->xPath();
         $result = @$xpath->query('/epp:epp/epp:response/epp:extension/domain-ext:infData/domain-ext:delayed');
     	if ($result->length > 0) {
     		if ($result->item(0)->nodeValue == 'true') {

@@ -6,13 +6,13 @@ namespace Metaregistrar\EPP;
  *
  *
  * <extension>
-<domain-ext-2.3:infData>
-<domain-ext-2.3:onHold>false</domain-ext-2.3:onHold>
-<domain-ext-2.3:quarantined>true</domain-ext-2.3:quarantined>
-<domain-ext-2.3:suspended>false</domain-ext-2.3:suspended>
-<domain-ext-2.3:seized>false</domain-ext-2.3:seized>
-<domain-ext-2.3:availableDate>2021-07-11T10:35:00.000Z</domain-ext-2.3:availableDate>
-<domain-ext-2.3:deletionDate>2021-06-01T10:35:05.113Z</domain-ext-2.3:deletionDate>
+<domain-ext-2.5:infData>
+<domain-ext-2.5:onHold>false</domain-ext-2.5:onHold>
+<domain-ext-2.5:quarantined>true</domain-ext-2.5:quarantined>
+<domain-ext-2.5:suspended>false</domain-ext-2.5:suspended>
+<domain-ext-2.5:seized>false</domain-ext-2.5:seized>
+<domain-ext-2.5:availableDate>2021-07-11T10:35:00.000Z</domain-ext-2.5:availableDate>
+<domain-ext-2.5:deletionDate>2021-06-01T10:35:05.113Z</domain-ext-2.5:deletionDate>
  */
 
 class euridEppInfoDomainResponse extends eppInfoDomainResponse {
@@ -26,8 +26,8 @@ class euridEppInfoDomainResponse extends eppInfoDomainResponse {
      */
     public function getQuarantined() {
         $xpath = $this->xPath();
-        $result = $xpath->query('/epp:epp/epp:response/epp:extension/eurid:ext/eurid:infData/eurid:domain/eurid:quarantined');
-        if ($result->length > 0) {
+        $result = @$xpath->query('/epp:epp/epp:response/epp:extension/domain-ext:infData/domain-ext:quarantined');
+        if (is_object($result) && $result->length > 0) {
             if ($result->item(0)->nodeValue == 'true') {
                 return true;
             } else {
@@ -45,8 +45,8 @@ class euridEppInfoDomainResponse extends eppInfoDomainResponse {
      */
     public function getOnHold() {
         $xpath = $this->xPath();
-        $result = $xpath->query('/epp:epp/epp:response/epp:extension/eurid:ext/eurid:infData/eurid:domain/eurid:onhold');
-        if ($result->length > 0) {
+        $result = @$xpath->query('/epp:epp/epp:response/epp:extension/domain-ext:infData/domain-ext:onHold');
+        if (is_object($result) && $result->length > 0) {
             if ($result->item(0)->nodeValue == 'true') {
                 return true;
             } else {
@@ -63,8 +63,8 @@ class euridEppInfoDomainResponse extends eppInfoDomainResponse {
      */
     public function getSuspended() {
         $xpath = $this->xPath();
-        $result = $xpath->query('/epp:epp/epp:response/epp:extension/eurid:ext/eurid:infData/eurid:domain/eurid:suspended');
-        if ($result->length > 0) {
+        $result = @$xpath->query('/epp:epp/epp:response/epp:extension/domain-ext:infData/domain-ext:suspended');
+        if (is_object($result) && $result->length > 0) {
             if ($result->item(0)->nodeValue == 'true') {
                 return true;
             } else {
@@ -81,8 +81,8 @@ class euridEppInfoDomainResponse extends eppInfoDomainResponse {
      */
     public function getSeized() {
         $xpath = $this->xPath();
-        $result = $xpath->query('/epp:epp/epp:response/epp:extension/eurid:ext/eurid:infData/eurid:domain/eurid:seized');
-        if ($result->length > 0) {
+        $result = @$xpath->query('/epp:epp/epp:response/epp:extension/domain-ext:infData/domain-ext:seized');
+        if (is_object($result) && $result->length > 0) {
             if ($result->item(0)->nodeValue == 'true') {
                 return true;
             } else {
@@ -99,8 +99,8 @@ class euridEppInfoDomainResponse extends eppInfoDomainResponse {
      */
     public function getAvailableDate() {
         $xpath = $this->xPath();
-        $result = $xpath->query('/epp:epp/epp:response/epp:extension/eurid:ext/eurid:infData/eurid:domain/eurid:availableDate');
-        if ($result->length > 0) {
+        $result = @$xpath->query('/epp:epp/epp:response/epp:extension/domain-ext:infData/domain-ext:availableDate');
+        if (is_object($result) && $result->length > 0) {
             return (Date("Y-m-d",strtotime($result->item(0)->nodeValue)));
         } else {
             return null;
@@ -113,12 +113,25 @@ class euridEppInfoDomainResponse extends eppInfoDomainResponse {
      */
     public function getDeletionDate() {
         $xpath = $this->xPath();
-        $result = $xpath->query('/epp:epp/epp:response/epp:extension/eurid:ext/eurid:infData/eurid:domain/eurid:deletionDate');
-        if ($result->length > 0) {
+        $result = @$xpath->query('/epp:epp/epp:response/epp:extension/domain-ext:infData/domain-ext:deletionDate');
+        if (is_object($result) && $result->length > 0) {
             return (Date("Y-m-d",strtotime($result->item(0)->nodeValue)));
         } else {
             return null;
         }
     }
-}
 
+    /**
+     *
+     * @return string|null
+     */
+    public function getMaxExtensionPeriod() {
+        $xpath = $this->xPath();
+        $result = @$xpath->query('/epp:epp/epp:response/epp:extension/domain-ext:infData/domain-ext:maxExtensionPeriod');
+        if (is_object($result) && $result->length > 0) {
+            return $result->item(0)->nodeValue;
+        } else {
+            return null;
+        }
+    }
+}

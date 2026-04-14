@@ -18,6 +18,58 @@ namespace Metaregistrar\EPP;
  */
 
 class euridEppInfoDomainResponse extends eppInfoDomainResponse {
+    function __construct() {
+        parent::__construct();
+    }
+    /**
+     *
+     * @return boolean|null
+     */
+    public function getNameserverGroup() {
+        $xpath = $this->xPath();
+        $result = @$xpath->query('/epp:epp/epp:response/epp:extension/domain-ext:infData/domain-ext:nsgroup');
+    	if ($result->length > 0) {
+    		$arr = [];
+    		foreach ($result as $item) {
+    			$arr[] = $item->nodeValue;
+    		}
+    		return $arr;
+    	} else {
+    		return null;
+    	}
+    }
+    /**
+     *
+     * @return boolean|null
+     */
+    public function getRegistrantCountry() {
+        $xpath = $this->xPath();
+        $result = @$xpath->query('/epp:epp/epp:response/epp:extension/domain-ext:infData/domain-ext:registrantCountry');
+    	if ($result->length > 0) {
+    		return $result->item(0)->nodeValue;
+    	} else {
+    		return null;
+    	}
+    }
+    
+    /**
+     *
+     * @return boolean|null
+     */
+    public function getDelayed() {
+        $xpath = $this->xPath();
+        $result = @$xpath->query('/epp:epp/epp:response/epp:extension/domain-ext:infData/domain-ext:delayed');
+    	if ($result->length > 0) {
+    		if ($result->item(0)->nodeValue == 'true') {
+    			return true;
+    		} else {
+    			return false;
+    		}
+    	} else {
+    		return null;
+    	}
+    }
+
     /**
      *
      * @return boolean|null

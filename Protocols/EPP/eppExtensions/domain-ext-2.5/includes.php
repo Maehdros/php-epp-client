@@ -23,5 +23,5 @@ $this->addCommandResponse('Metaregistrar\EPP\euridEppUndeleteDomainRequest', 'Me
 include_once dirname(__FILE__) . '/eppRequests/euridEppUpdateDomainRequest.php';
 $this->addCommandResponse('Metaregistrar\EPP\euridEppUpdateDomainRequest', 'Metaregistrar\EPP\eppUpdateDomainResponse');
 
-include_once dirname(__FILE__) . '/eppRequests/euridEppUpdateContactRequest.php';
-$this->addCommandResponse('Metaregistrar\EPP\euridEppUpdateContactRequest', 'Metaregistrar\EPP\eppUpdateContactResponse');
+//include_once dirname(__FILE__) . '/eppRequests/euridEppUpdateContactRequest.php';
+//$this->addCommandResponse('Metaregistrar\EPP\euridEppUpdateContactRequest', 'Metaregistrar\EPP\eppUpdateContactResponse');

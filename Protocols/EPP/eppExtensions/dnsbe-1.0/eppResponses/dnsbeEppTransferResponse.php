@@ -27,10 +27,6 @@ namespace Metaregistrar\EPP;
 
 class dnsbeEppTransferResponse extends eppTransferResponse {
 
-    function __construct() {
-        parent::__construct();
-    }
-
     /**
      *
      * @return string

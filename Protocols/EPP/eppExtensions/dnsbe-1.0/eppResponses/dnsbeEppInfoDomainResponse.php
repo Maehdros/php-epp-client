@@ -8,10 +8,6 @@ use phpseclib3\Math\BigInteger\Engines\PHP;
  * @package Metaregistrar\EPP
  */
 class dnsbeEppInfoDomainResponse extends eppInfoDomainResponse {
-    function __construct() {
-        parent::__construct();
-    }
-
 
     /**
      * Retrieve a boolean flag if this domain name is in quarantine or not

@@ -6,9 +6,6 @@ namespace Metaregistrar\EPP;
  * @package Metaregistrar\EPP
  */
 class dnsbeEppInfoContactResponse extends eppInfoContactResponse {
-    function __construct() {
-        parent::__construct();
-    }
 
 
     /**

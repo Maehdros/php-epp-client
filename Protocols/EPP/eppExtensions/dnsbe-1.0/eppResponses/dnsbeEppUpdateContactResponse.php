@@ -1,6 +1,5 @@
 <?php
+
 namespace Metaregistrar\EPP;
 
-class dnsbeEppUpdateContactResponse extends eppUpdateContactResponse {
-}
-
+class dnsbeEppUpdateContactResponse extends eppUpdateContactResponse {}

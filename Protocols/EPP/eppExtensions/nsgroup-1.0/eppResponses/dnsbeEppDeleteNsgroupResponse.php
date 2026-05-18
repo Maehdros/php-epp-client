@@ -18,10 +18,4 @@ namespace Metaregistrar\EPP;
  * @package Metaregistrar\EPP
  */
 class dnsbeEppDeleteNsgroupResponse extends eppResponse {
-    function __construct() {
-        parent::__construct();
-    }
-   function __destruct() {
-      parent::__destruct();
-   }
 }

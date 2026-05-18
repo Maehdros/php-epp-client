@@ -22,9 +22,6 @@ namespace Metaregistrar\EPP;
  * @package Metaregistrar\EPP
  */
 class dnsbeEppInfoNsgroupResponse extends eppResponse {
-    function __construct() {
-        parent::__construct();
-    }
 
     /**
      *
